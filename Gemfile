@@ -43,3 +43,6 @@ group :development, :test do
   gem 'spring'
 end
 
+
+gem 'tire', git: 'git://github.com/karmi/tire.git'
+gem 'will_paginate', '~> 3.0'
