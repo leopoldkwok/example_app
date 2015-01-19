@@ -1,18 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @article.title %>
+  <strong>First Name:</strong>
+  <%= @article.first_name %>
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @article.content %>
+  <strong>Surname:</strong>
+  <%= @article.surname %>
 </p>
 
 <p>
-  <strong>Published on:</strong>
-  <%= @article.published_on %>
+  <strong>Address:</strong>
+  <%= @article.address %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @article.phonenumber %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @article.email %>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |

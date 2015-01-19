@@ -1,7 +1,7 @@
 <%= form_for(@article) do |f| %>
   <% if @article.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
       <ul>
       <% @article.errors.full_messages.each do |message| %>
@@ -12,18 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :firstname %><br>
+    <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.label :surname %><br>
+    <%= f.text_area :surname %>
   </div>
   <div class="field">
-    <%= f.label :published_on %><br>
-    <%= f.date_select :published_on %>
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </div>
+   <div class="field">
+    <%= f.label :phonenumber %><br>
+    <%= f.text_area :phonenumber %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_area :email %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Contact"%>
   </div>
 <% end %>

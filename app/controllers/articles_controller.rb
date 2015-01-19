@@ -1,11 +1,13 @@
 class ArticlesController < ApplicationController
+
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+      @articles = Article.search(params)
   end
+
 
     # GET /articles/search
   def search
@@ -36,7 +38,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html { redirect_to @article, notice: 'Contact was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -50,7 +52,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to @article, notice: 'Contact was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
@@ -64,7 +66,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
+      format.html { redirect_to articles_url, notice: 'Contact was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -77,6 +79,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :published_on)
+      params.require(:article).permit(:first_name, :surname, :address, :phonenumber, :email)
     end
 end
